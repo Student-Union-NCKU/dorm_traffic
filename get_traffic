@@ -59,7 +59,7 @@ if(!mysql_query($sql_query)) //如果資料表不在，則創造一個
 	$sql_create = "CREATE TABLE `dorm`.`$date` ( `no` INT NOT NULL AUTO_INCREMENT , `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `rank` INT NOT NULL , `ip` VARCHAR(255) NOT NULL , `download` VARCHAR(255) NOT NULL , `upload` VARCHAR(255) NOT NULL , `total` VARCHAR(255) NOT NULL , `hours` INT NOT NULL, PRIMARY KEY (`no`) ) ENGINE = InnoDB;";
     if(mysql_query($sql_create))
     {
-    	//echo "成功!"; //debug用
+    	
     }
 }
 $hours = date("G");
@@ -68,7 +68,7 @@ for($num=1;$num<=6500;$num++) //如果資料表已存在，則寫入資料
 	$sql_insert = "insert into `$date` (rank , ip , download , upload , total , hours) values ('$num' , '$ip[$num]', '$download[$num]', '$upload[$num]', '$total[$num]', '$hours' )";
     if(mysql_query($sql_insert))
     {
-    	//echo "成功!"; //debug用
+    	
     }
 }
 ?>
